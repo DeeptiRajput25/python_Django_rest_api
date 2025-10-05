@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/styles.css' %}">
+
+    <style>
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add New Employee</h1>
+
+
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="{{ form.manager.id_for_label }}">{{ form.manager.label }}</label>
+                {{ form.manager }}
+                {% if form.manager.errors %}
+                    <div class="alert alert-error">{{ form.manager.errors }}</div>
+                {% endif %}
+            </div>
+            <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                {{ form.name }}
+
+            </div>
+             <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.email.label }}</label>
+                {{ form.email }}
+
+            </div>
+            <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.department.label }}</label>
+                {{ form.department }}
+
+            </div>
+            <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.position.label }}</label>
+                {{ form.position }}
+
+            </div>
+            <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.salary.label }}</label>
+                {{ form.salary }}
+
+            </div>
+            <div>
+                <label for="{{ form.name.id_for_label }}">{{ form.hired_on.label }}</label>
+                {{ form.hired_on }}
+
+            </div>
+            <div>
+                <button type="submit" class="btn">Add Student</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
