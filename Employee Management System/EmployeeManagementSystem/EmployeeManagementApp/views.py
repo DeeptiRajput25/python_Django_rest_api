@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .form import ManagerForm
 from .form import EmployeeForm
 
+
 def Manager(request):
     print("$$$$$$REquest type is", request.method)
     print("$$$$$$$request data is ", request.POST)
@@ -31,3 +32,20 @@ def Employee(request):
 
 
     return render(request, 'employee_list.html', {'form': form})
+
+
+
+
+# def office_view(request):
+#     if request.method == 'POST':
+#         print('postDetails', request.POST)
+#         form = OfficeListForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#     else:
+#         form = OfficeListForm()
+#         print("$$$$$",form)
+#
+#
+#     return render(request, 'office_list.html', {'form': form})

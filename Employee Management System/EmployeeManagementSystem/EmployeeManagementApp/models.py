@@ -27,6 +27,16 @@ class Employee(models.Model):
 
 
 
+class OfficeList(models.Model):
+    address = models.CharField(max_length=100)
+    latitude = models.CharField(max_length=100)
+    longitude = models.CharField(max_length=100)
+    mobile_number = models.CharField(max_length=15, blank=True, null=True)
+    contact_person = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.address
+
 
 
 
