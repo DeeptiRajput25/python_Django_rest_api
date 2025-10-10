@@ -56,8 +56,8 @@ class Attendance(models.Model):
     date = models.DateField()
     status = models.CharField(max_length=10,
         choices=[
-            ('Present', 'dfsfdf'),
-            ('Absent', 'fsfsf'),
+            ('Present', 'Present'),
+            ('Absent', 'Absent'),
             ('sickleave','fsdfd')
         ],
         default='Present'
