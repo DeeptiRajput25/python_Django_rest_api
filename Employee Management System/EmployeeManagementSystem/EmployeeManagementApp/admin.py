@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import Employee
 from .models import Manager
 from .models import OfficeList
+from .models import Attendance
+
 
 
 
@@ -9,4 +11,8 @@ from .models import OfficeList
 admin.site.register(Employee)
 admin.site.register(Manager)
 admin.site.register(OfficeList)
+admin.site.register(Attendance)
+
+
+
 

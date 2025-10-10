@@ -40,5 +40,36 @@ class OfficeList(models.Model):
 
 
 
+# class Attendance(models.Model):
+#     employeeName = models.CharField(max_length=100)
+#     date = models.DateField()
+#     present = models.BooleanField(default=False)
+#     absent = models.BooleanField(default=False)
+#
+#     def __str__(self):
+#         return self.address
+
+
+
+class Attendance(models.Model):
+    employee = models.ForeignKey('Employee', on_delete=models.CASCADE,related_name='attendances')
+    date = models.DateField()
+    status = models.CharField(max_length=10,
+        choices=[
+            ('Present', 'dfsfdf'),
+            ('Absent', 'fsfsf'),
+            ('sickleave','fsdfd')
+        ],
+        default='Present'
+    )
+
+    def __str__(self):
+        return f"{self.employee.name} - {self.date} - {self.status}"
+
+
+
+
+
+
 
 
